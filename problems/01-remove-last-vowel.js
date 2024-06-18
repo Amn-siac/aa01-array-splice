@@ -4,7 +4,18 @@ string with its last vowel removed.
 Vowels are the letters "a", "e", "i", "o", "u".
 */
 
-// Your code here 
+function removeLastVowel(word) {
+    let vowels = ['a', 'e', 'i', 'o', 'u']
+    word = word.split('');
+    for (let i = word.length - 1; i >= 0; i--) {
+        if (vowels.includes(word[i])) {
+            word.splice(i, 1);
+            word = word.join('');
+            return word;
+        }
+    }
+    return word.join('');
+}
 
 // console.log(removeLastVowel('bootcamp')); // 'bootcmp'
 // console.log(removeLastVowel('better')); // 'bettr'
